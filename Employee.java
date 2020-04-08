@@ -15,6 +15,8 @@ Department department;
 String position;
 Address adress;
 Efficiency efficiency;
+public boolean Active;
+public String formattime
 
     public Employee(int id, String firstname, String lastname, String email, Department department, String position, Address adress, Efficiency efficiency) {
         this.id = id;
@@ -30,17 +32,22 @@ Efficiency efficiency;
 public abstract void checkednotification();
 public  void login()
 {
+    Active = true;
     LocalTime time=LocalTime.now();
     DateTimeFormatter timef=DateTimeFormatter.ofPattern("hh:mm:ss");
-    String formattime=time.format(timef);
+    formattime=time.format(timef);
     System.out.println("Entry Time:"+formattime);
 }
 public  void logout()
 {
+    Active = false;
       LocalTime time=LocalTime.now();
     DateTimeFormatter timef=DateTimeFormatter.ofPattern("hh:mm:ss");
-    String formattime=time.format(timef);
+    String formattime1=time.format(timef);
     System.out.println("Exit Time:"+formattime);
+    
+    // create Hours worked calculating part here
+    // formattime1 - formattime
     
 }
         
